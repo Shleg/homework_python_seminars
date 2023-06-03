@@ -16,3 +16,4 @@ set_2 = {randint(1, 20) for _ in range(num_2)}
 print(set_2)
 
 print(sorted(set_1.intersection(set_2)))
+print(sorted(set_1 & set_2))

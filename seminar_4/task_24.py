@@ -12,21 +12,27 @@
 # собрать за один заход собирающий модуль, находясь перед некоторым кустом
 # заданной во входном файле грядки.
 
-from random import randint
+# from random import randint
+#
+# num = int(input('Введите кол-во кустов: '))
+#
+# num_berries = [randint(1, 10) for _ in range(num)]
+# print(num_berries)
+#
+# num_berries_left = num_berries[1:]
+# num_berries_left.extend(num_berries[:1])
+# print(num_berries_left)
+#
+# num_berries_right = num_berries[-1:]
+# num_berries_right.extend(num_berries[:-1])
+# print(num_berries_right)
+#
+# max_berries = max([num_berries[i] + num_berries_left[i] + num_berries_right[i] for i in range(len(num_berries))])
+#
+# print('Макс-ое кол-во ягод за один заход равно: ', max_berries)
 
-num = int(input('Введите кол-во кустов: '))
+lst = [5, 3, 6, 6, 7]
+n = len(lst)
+result = max([lst[i - 1] + lst[i] + lst[(i + 1) % n] for i in range(n)])
 
-num_berries = [randint(1, 10) for _ in range(num)]
-print(num_berries)
-
-num_berries_left = num_berries[1:]
-num_berries_left.extend(num_berries[:1])
-print(num_berries_left)
-
-num_berries_right = num_berries[-1:]
-num_berries_right.extend(num_berries[:-1])
-print(num_berries_right)
-
-max_berries = max([num_berries[i] + num_berries_left[i] + num_berries_right[i] for i in range(len(num_berries))])
-
-print('Макс-ое кол-во ягод за один заход равно: ', max_berries)
+print('\nМаксимальное число ягод, которое может собрать за один заход собирающий модуль:',result)
