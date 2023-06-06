@@ -9,5 +9,5 @@
 
 a, b, c = map(int, input('Введите данные: ').split())
 
-result = [a + (i - 1) * b for i in range(1, c + 1)]
+result = [a + i * b for i in range(c)]
 print(*result)
